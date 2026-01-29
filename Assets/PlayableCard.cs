@@ -27,7 +27,9 @@ public class PlayableCard : Card
         _type = _playableCardInfo.Type;
 
         GetComponentInChildren<SpriteRenderer>().sprite = _faceSprite;
+        _itemSway = GetComponentInChildren<ItemSway>();
     }
+    
 
     public void SetInfo(PlayableCardObject cardInfo)
     {

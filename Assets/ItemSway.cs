@@ -9,7 +9,7 @@ public class ItemSway : MonoBehaviour
     private void Update()
     {
         transform.localRotation = Quaternion.Slerp(transform.localRotation,
-            new Quaternion(_targetRotation.x, _targetRotation.y, 0, transform.localRotation.w),
+            new Quaternion( _targetRotation.x,  _targetRotation.y, 0, transform.localRotation.w),
             Time.deltaTime * 1.2f);
     }
 

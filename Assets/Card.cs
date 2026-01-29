@@ -12,11 +12,12 @@ public abstract class Card : Item
 
     private int _randomAngle;
 
-    private ItemSway _itemSway;
 
+
+    private Tween _idleTween;
     protected void Start()
     {
-        _itemSway = GetComponentInChildren<ItemSway>();
+        
 
         _randomDuration = Random.Range(0.1f, 3);
         _idleDuration += _randomDuration;
@@ -30,11 +31,12 @@ public abstract class Card : Item
 
     private void Idle()
     {
-        DOTween.Sequence()
+        _idleTween = DOTween.Sequence()
             .Append(transform.DOLocalRotate(new Vector3(0, 0, _rotationAngle), _idleDuration))
             .Append(transform.DOLocalRotate(new Vector3(0, 0, -_rotationAngle), _idleDuration))
             .Append(transform.DOLocalRotate(_startRotation, _idleDuration / 2).SetEase(Ease.Linear))
-            .SetLoops(-1, LoopType.Restart);
+            .SetLoops(-1, LoopType.Restart)
+            .SetAutoKill(false);
     }
 
     protected virtual void MoveTo()
@@ -45,13 +47,11 @@ public abstract class Card : Item
     {
     }
 
-    public void SetSwayAngle(Vector2 angle)
-    {
-        _itemSway.Sway(angle);
-    }
 
-    public void ResetSway()
+
+    public void KillTweens()
     {
-        _itemSway.ResetSway();
+        _idleTween?.Kill();
     }
+    
 }

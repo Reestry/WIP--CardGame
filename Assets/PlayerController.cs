@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera _cam;
     private InputSystem_Actions _input;
 
-    private Card _obj;
+    private Item _obj;
 
     private Vector2 _mousePos;
 
@@ -29,12 +29,18 @@ public class PlayerController : MonoBehaviour
 
         if (_input.Player.Attack.WasPressedThisFrame())
         {
-            var hit = Physics2D.Raycast(_worldPosition, Vector2.zero);
+            var hit = Physics2D.Raycast(_worldPosition, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Items"));
 
             if (hit.collider == null)
                 return;
 
-            var card = hit.collider.GetComponent<Card>();
+            
+            Debug.Log(hit.collider.name);
+            var card = hit.collider.GetComponent<Item>();
+            
+            if (card == null)
+                return;
+            
             Debug.Log("sss");
             _obj = card;
             _obj.Take();
@@ -42,8 +48,11 @@ public class PlayerController : MonoBehaviour
 
         if (_input.Player.Attack.WasReleasedThisFrame())
         {
-            _obj?.ResetSway();
-            _obj?.Release();
+            if (_obj == null)
+                return;
+
+            _obj.ResetSway();
+            _obj.Release();
             _obj = null;
         }
 
@@ -53,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
             _obj.gameObject.transform.position = Vector3.Lerp(_obj.gameObject.transform.position, _worldPosition,
                 5 * Time.deltaTime);
-
+            
             _obj.SetSwayAngle(_mouseForce);
         }
     }
