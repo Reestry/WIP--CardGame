@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49e4e228b4ee6404e82f9189b0c7e923, type: 3}
-  m_Name: 2Clubs
+  m_Name: 10Clubs
   m_EditorClassIdentifier: Assembly-CSharp::PlayableCardObject
-  _faceSprite: {fileID: -2057507049, guid: 051e87481fc09fe4eababa1d616571ea, type: 3}
-  _backSprite: {fileID: -2014755764179604245, guid: c8a646aafb6ccc94a8b2475446cc3ce2, type: 3}
+  _faceSprite: {fileID: -1909515377, guid: 051e87481fc09fe4eababa1d616571ea, type: 3}
+  _backSprite: {fileID: -350520220, guid: 051e87481fc09fe4eababa1d616571ea, type: 3}
   _currentSuit: {fileID: 11400000, guid: 459b63d1aab65484bb6153cb8173b35a, type: 2}
-  _cost: 2
+  _cost: 10
   _type: 4

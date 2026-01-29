@@ -127,6 +127,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Debug_CreateCard"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef464f6d-7d2e-4f19-9020-3166c2df9957"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Debug_ClearHand"",
+                    ""type"": ""Button"",
+                    ""id"": ""5fbe8b22-199b-4a1b-8d30-7d7aca95f58d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -248,6 +266,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouseForce"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78cd31cc-ffa5-4828-bbf0-64a7e0ed0d79"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Debug_CreateCard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3fd1ea40-e5a8-411a-ba81-bff7c4ce526e"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Debug_ClearHand"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -839,6 +879,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_MousePos = m_Player.FindAction("MousePos", throwIfNotFound: true);
         m_Player_MouseForce = m_Player.FindAction("MouseForce", throwIfNotFound: true);
+        m_Player_Debug_CreateCard = m_Player.FindAction("Debug_CreateCard", throwIfNotFound: true);
+        m_Player_Debug_ClearHand = m_Player.FindAction("Debug_ClearHand", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -936,6 +978,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_MousePos;
     private readonly InputAction m_Player_MouseForce;
+    private readonly InputAction m_Player_Debug_CreateCard;
+    private readonly InputAction m_Player_Debug_ClearHand;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -963,6 +1007,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/MouseForce".
         /// </summary>
         public InputAction @MouseForce => m_Wrapper.m_Player_MouseForce;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Debug_CreateCard".
+        /// </summary>
+        public InputAction @Debug_CreateCard => m_Wrapper.m_Player_Debug_CreateCard;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Debug_ClearHand".
+        /// </summary>
+        public InputAction @Debug_ClearHand => m_Wrapper.m_Player_Debug_ClearHand;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1001,6 +1053,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @MouseForce.started += instance.OnMouseForce;
             @MouseForce.performed += instance.OnMouseForce;
             @MouseForce.canceled += instance.OnMouseForce;
+            @Debug_CreateCard.started += instance.OnDebug_CreateCard;
+            @Debug_CreateCard.performed += instance.OnDebug_CreateCard;
+            @Debug_CreateCard.canceled += instance.OnDebug_CreateCard;
+            @Debug_ClearHand.started += instance.OnDebug_ClearHand;
+            @Debug_ClearHand.performed += instance.OnDebug_ClearHand;
+            @Debug_ClearHand.canceled += instance.OnDebug_ClearHand;
         }
 
         /// <summary>
@@ -1024,6 +1082,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @MouseForce.started -= instance.OnMouseForce;
             @MouseForce.performed -= instance.OnMouseForce;
             @MouseForce.canceled -= instance.OnMouseForce;
+            @Debug_CreateCard.started -= instance.OnDebug_CreateCard;
+            @Debug_CreateCard.performed -= instance.OnDebug_CreateCard;
+            @Debug_CreateCard.canceled -= instance.OnDebug_CreateCard;
+            @Debug_ClearHand.started -= instance.OnDebug_ClearHand;
+            @Debug_ClearHand.performed -= instance.OnDebug_ClearHand;
+            @Debug_ClearHand.canceled -= instance.OnDebug_ClearHand;
         }
 
         /// <summary>
@@ -1352,6 +1416,20 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMouseForce(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Debug_CreateCard" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDebug_CreateCard(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Debug_ClearHand" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDebug_ClearHand(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e4e228b4ee6404e82f9189b0c7e923, type: 3}
   m_Name: 2Clubs
   m_EditorClassIdentifier: Assembly-CSharp::PlayableCardObject
-  _faceSprite: {fileID: -2057507049, guid: 051e87481fc09fe4eababa1d616571ea, type: 3}
+  _faceSprite: {fileID: -69034626, guid: 051e87481fc09fe4eababa1d616571ea, type: 3}
   _backSprite: {fileID: -2014755764179604245, guid: c8a646aafb6ccc94a8b2475446cc3ce2, type: 3}
-  _currentSuit: {fileID: 11400000, guid: 459b63d1aab65484bb6153cb8173b35a, type: 2}
+  _currentSuit: {fileID: 11400000, guid: 40dce9f7cead165418d2a7d1c7f6377f, type: 2}
   _cost: 2
   _type: 4

@@ -42,8 +42,8 @@ public class PlayerController : MonoBehaviour
 
         if (_input.Player.Attack.WasReleasedThisFrame())
         {
-            _obj.ResetSway();
-            _obj.Release();
+            _obj?.ResetSway();
+            _obj?.Release();
             _obj = null;
         }
 

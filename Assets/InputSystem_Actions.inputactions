@@ -41,6 +41,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Debug_CreateCard",
+                    "type": "Button",
+                    "id": "ef464f6d-7d2e-4f19-9020-3166c2df9957",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Debug_ClearHand",
+                    "type": "Button",
+                    "id": "5fbe8b22-199b-4a1b-8d30-7d7aca95f58d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -162,6 +180,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "MouseForce",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78cd31cc-ffa5-4828-bbf0-64a7e0ed0d79",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Debug_CreateCard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3fd1ea40-e5a8-411a-ba81-bff7c4ce526e",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Debug_ClearHand",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
