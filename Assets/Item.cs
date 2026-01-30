@@ -23,10 +23,26 @@ public class Item : MonoBehaviour, ITakeable
 
     public void Release()
     {
+        MoveTo(ReturnStartPosition());
+    }
+    
+
+    /*private void ToStartPosition()
+    {
         _releaseTween = transform.DOMove(_startPos, 0.3f).SetEase(Ease.OutFlash)
             .SetAutoKill(false);
 
         transform.DOLocalRotate(Vector3.zero, 1f);
+    }*/
+
+    public void MoveTo(Vector3 move)
+    {
+        transform.DOMove(move, 0.3f).SetAutoKill();
+    }
+    
+    public Vector2 ReturnStartPosition()
+    {
+        return _startPos;
     }
     
     public void SetSwayAngle(Vector2 angle)

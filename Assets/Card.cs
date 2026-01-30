@@ -12,13 +12,12 @@ public abstract class Card : Item
 
     private int _randomAngle;
 
-
-
     private Tween _idleTween;
+
+    private Vector3 _startPos;
+
     protected void Start()
     {
-        
-
         _randomDuration = Random.Range(0.1f, 3);
         _idleDuration += _randomDuration;
 
@@ -43,15 +42,13 @@ public abstract class Card : Item
     {
     }
 
-    public void SetPos(Vector2 position)
+    public void SetStartPos(Vector2 position)
     {
+        _startPos = position;
     }
-
-
 
     public void KillTweens()
     {
         _idleTween?.Kill();
     }
-    
 }

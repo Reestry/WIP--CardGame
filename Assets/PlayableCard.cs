@@ -1,9 +1,24 @@
+using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayableCard : Card
 {
     [SerializeField] private PlayableCardObject _playableCardInfo;
+
+    private CardHolderController _currentHolder;
+
+    public void SetHolder(CardHolderController holder)
+    {
+        _currentHolder = holder;
+    }
+
+    public CardHolderController CardHolder()
+    {
+        return _currentHolder;
+    }
 
     private Sprite _faceSprite;
     private Sprite _backSprite;
@@ -19,6 +34,7 @@ public class PlayableCard : Card
         _playableCardInfo = _cards[i];
 
         base.Start();
+
         _faceSprite = _playableCardInfo.FaceSprite;
         _backSprite = _playableCardInfo.BackSprite;
 
@@ -29,7 +45,13 @@ public class PlayableCard : Card
         GetComponentInChildren<SpriteRenderer>().sprite = _faceSprite;
         _itemSway = GetComponentInChildren<ItemSway>();
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var holder = other.GetComponent<CardHolderController>();
+        if (holder == null)
+            return;
+    }
 
     public void SetInfo(PlayableCardObject cardInfo)
     {
