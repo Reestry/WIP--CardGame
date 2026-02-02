@@ -34,43 +34,25 @@ public class PlayerController : MonoBehaviour
             if (hit.collider == null)
                 return;
 
-            Debug.Log(hit.collider.name);
             var item = hit.collider.GetComponent<Item>();
 
             if (item == null)
                 return;
-
-            Debug.Log("sss");
+            
             _obj = item;
             _obj.Take();
 
-            if (_obj is PlayableCard)
-            {
-                var card = _obj as PlayableCard;
+            if (_obj is PlayableCard card)
                 card.CardHolder().DeleteCard(card);
-            }
         }
 
         if (_input.Player.Attack.WasReleasedThisFrame())
         {
             if (_obj == null)
                 return;
-
-            _obj.ResetSway();
             _obj.Release();
-            
-            var card = _obj as PlayableCard;
-
             _obj = null;
-
-            if (card == null)
-                return;
-
-            Debug.Log("Возвращаю");
-            card.CardHolder().AddCard(card);
-            card.CardHolder().SortItems();
         }
-
 
         if (_obj != null)
         {
