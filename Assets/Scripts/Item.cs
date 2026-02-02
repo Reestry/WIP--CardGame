@@ -28,10 +28,10 @@ public class Item : MonoBehaviour, ITakeable
 
     public void MoveTo(Vector3 move)
     {
-        transform.DOMove(move, 0.3f).SetAutoKill();
+        transform.DOMove(move, 0.3f).SetEase(Ease.Linear ) .SetAutoKill();
     }
 
-    public void SetSwayAngle(Vector2 angle)
+    public void SetSwayAngle(Vector2 angle)  
     {
         _itemSway.Sway(angle);
     }

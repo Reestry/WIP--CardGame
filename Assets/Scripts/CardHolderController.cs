@@ -20,19 +20,26 @@ public class CardHolderController : MonoBehaviour
         SortItems();
     }
 
+    [SerializeField] private int _maxCards;
+    
     public void SortItems()
     {
         if (_hand.Count == 0)
             return;
 
-        var totalWidth = (_hand.Count - 1) * _indentation;
+        var indent = _indentation;
+        if (_hand.Count >= _maxCards)
+            indent *= 0.7f;
+        
+        
+        var totalWidth = (_hand.Count - 1) * indent;
 
         var startX = _center.position.x - totalWidth / 2f;
 
         for (var i = 0; i < _hand.Count; i++)
         {
             var card = _hand[i];
-            var targetPos = new Vector3(startX + i * _indentation, _center.position.y, _center.position.z);
+            var targetPos = new Vector3(startX + i * indent, _center.position.y, _center.position.z);
 
             card.MoveTo(targetPos);
         }

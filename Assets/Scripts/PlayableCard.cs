@@ -10,17 +10,12 @@ public class PlayableCard : Card
 
     private CardHolderController _currentHolder;
 
-    #region CardInfo
-
     private Sprite _faceSprite;
     private Sprite _backSprite;
     private SuitObject _currentSuit;
     private int _cost;
     private CardType _type;
-    
 
-    #endregion
-    
     public void SetHolder(CardHolderController holder)
     {
         _currentHolder = holder;
@@ -56,13 +51,14 @@ public class PlayableCard : Card
 
     private CardHolderController _previousHolder;
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         var holder = other.GetComponent<CardHolderController>();
         if (holder == null)
             return;
 
         _previousHolder = _currentHolder;
+        
         _currentHolder = holder;
         SetHolder(_currentHolder);
     }
@@ -70,11 +66,11 @@ public class PlayableCard : Card
     private void OnTriggerExit2D(Collider2D other)
     {
         var holder = other.GetComponent<CardHolderController>();
-        if (holder == null || other != _currentHolder)
+        if (holder == null || holder != _currentHolder)
             return;
 
         _currentHolder = _previousHolder;
-        _previousHolder = null;
+
     }
 
     public void SetInfo(PlayableCardObject cardInfo)

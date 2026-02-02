@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Player_CardHolder : CardHolderController
@@ -11,13 +12,15 @@ public class Player_CardHolder : CardHolderController
     {
         _input = new InputSystem_Actions();
         _input.Enable();
+
+        CrerateCard();
     }
 
     private void Update()
     {
         if (_input.Player.Debug_CreateCard.WasPressedThisFrame())
         {
-            CrerateCard();
+            CreateCard();
         }
 
         if (_input.Player.Debug_ClearHand.WasPressedThisFrame())
@@ -28,10 +31,19 @@ public class Player_CardHolder : CardHolderController
     }
 
     // TODO move to new class like CardCreator
-    private void CrerateCard()
+    private async Task CrerateCard()
     {
         // TODO set start position from deck
 
+        for (var i = 0; i <= 8; i++)
+        {
+            CreateCard();
+            await Task.Delay(100);
+        }
+    }
+
+    private void CreateCard()
+    {
         var card = Instantiate(_cardPrefab).GetComponent<PlayableCard>();
         card.transform.position = _deckPosition.position;
 
