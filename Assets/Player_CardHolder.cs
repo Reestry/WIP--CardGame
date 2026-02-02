@@ -34,7 +34,7 @@ public class Player_CardHolder : CardHolderController
     private async Task CrerateCard()
     {
         // TODO set start position from deck
-
+        await Task.Delay(1000);
         for (var i = 0; i <= 8; i++)
         {
             CreateCard();

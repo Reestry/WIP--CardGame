@@ -28,7 +28,7 @@ public class CardHolderController : MonoBehaviour
             return;
 
         var indent = _indentation;
-        if (_hand.Count >= _maxCards)
+        if (_hand.Count > _maxCards)
             indent *= 0.7f;
         
         

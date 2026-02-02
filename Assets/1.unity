@@ -127,9 +127,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 933932445534924459, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4279195001343083277, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
       propertyPath: m_Name
       value: CardPlace (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279195001343083277, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330335671740988975, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5916901571839222712, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -170,6 +182,10 @@ PrefabInstance:
     - target: {fileID: 5916901571839222712, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755545072919451283, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -554,6 +570,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3837115081595183799, guid: f47dcc53f403aef479b8561168b790e3, type: 3}
+      propertyPath: _maxCards
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3837115081595183799, guid: f47dcc53f403aef479b8561168b790e3, type: 3}
       propertyPath: _deckPosition
       value: 
       objectReference: {fileID: 1575111084}
@@ -614,9 +634,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 933932445534924459, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4279195001343083277, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
       propertyPath: m_Name
       value: CardPlace
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279195001343083277, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330335671740988975, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5916901571839222712, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -657,6 +689,10 @@ PrefabInstance:
     - target: {fileID: 5916901571839222712, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755545072919451283, guid: 810be4fcd396b87498f889356efc9aec, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

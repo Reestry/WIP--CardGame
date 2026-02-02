@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3518551531723344365}
   - component: {fileID: 9179688332555092950}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 5916901571839222712}
   - component: {fileID: 4984275506348351849}
   - component: {fileID: 8088612939410656143}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: CardPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,6 +142,7 @@ MonoBehaviour:
   _indentation: 0.3
   _handHolder: {fileID: 4784233158438766149}
   _center: {fileID: 4407949563441972808}
+  _maxCards: 0
 --- !u!61 &8088612939410656143
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,7 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4407949563441972808}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4784233158438766149}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: HandHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
