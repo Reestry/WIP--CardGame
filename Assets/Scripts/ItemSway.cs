@@ -5,12 +5,13 @@ public class ItemSway : MonoBehaviour
 {
     private Quaternion _targetRotation;
     [SerializeField] private float _swaymult = 5;
+    [SerializeField] private float _swaySmooth = 1.2f;
 
     private void Update()
     {
         transform.localRotation = Quaternion.Slerp(transform.localRotation,
-            new Quaternion( _targetRotation.x,  _targetRotation.y, 0, transform.localRotation.w),
-            Time.deltaTime * 1.2f);
+            new Quaternion(_targetRotation.x, _targetRotation.y, 0, transform.localRotation.w),
+            Time.deltaTime * _swaySmooth);
     }
 
     public void Sway(Vector2 angle)

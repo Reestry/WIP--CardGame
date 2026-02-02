@@ -38,15 +38,6 @@ public abstract class Card : Item
             .SetAutoKill(false);
     }
 
-    protected virtual void MoveTo()
-    {
-    }
-
-    public void SetStartPos(Vector2 position)
-    {
-        _startPos = position;
-    }
-
     public void KillTweens()
     {
         _idleTween?.Kill();

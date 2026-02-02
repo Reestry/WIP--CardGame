@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Item : MonoBehaviour, ITakeable
 {
-    private Tween _releaseTween;
-    private Vector3 _startPos;
-    
-    
     protected ItemSway _itemSway;
+
+    private Tween _releaseTween;
+    private Vector3 _holderPosition;
 
     private void Start()
     {
@@ -18,40 +17,22 @@ public class Item : MonoBehaviour, ITakeable
     public virtual void Take()
     {
         _releaseTween?.Kill();
-        _startPos = transform.position;
+        _holderPosition = transform.position;
     }
 
-    public void Release()
+    public virtual void Release()
     {
-        MoveTo(ReturnStartPosition());
+        _itemSway.ResetSway();
+        MoveTo(_holderPosition);
     }
-    
-
-    /*private void ToStartPosition()
-    {
-        _releaseTween = transform.DOMove(_startPos, 0.3f).SetEase(Ease.OutFlash)
-            .SetAutoKill(false);
-
-        transform.DOLocalRotate(Vector3.zero, 1f);
-    }*/
 
     public void MoveTo(Vector3 move)
     {
         transform.DOMove(move, 0.3f).SetAutoKill();
     }
-    
-    public Vector2 ReturnStartPosition()
-    {
-        return _startPos;
-    }
-    
+
     public void SetSwayAngle(Vector2 angle)
     {
         _itemSway.Sway(angle);
-    }
-
-    public void ResetSway()
-    {
-        _itemSway.ResetSway();
     }
 }
