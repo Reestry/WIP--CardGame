@@ -21,7 +21,7 @@ public class CardHolderController : MonoBehaviour
     }
 
     [SerializeField] private int _maxCards;
-    
+
     public void SortItems()
     {
         if (_hand.Count == 0)
@@ -30,8 +30,7 @@ public class CardHolderController : MonoBehaviour
         var indent = _indentation;
         if (_hand.Count > _maxCards)
             indent *= 0.7f;
-        
-        
+
         var totalWidth = (_hand.Count - 1) * indent;
 
         var startX = _center.position.x - totalWidth / 2f;

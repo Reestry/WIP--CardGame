@@ -26,26 +26,13 @@ public class PlayableCard : Card
         return _currentHolder;
     }
 
+    private SpriteRenderer _spriteRenderer;
 
-
-    //debug
-    [SerializeField] private List<PlayableCardObject> _cards;
-
-    private void Start()
+    private void OnEnable()
     {
-        var i = Random.Range(0, _cards.Count);
-        _playableCardInfo = _cards[i];
-
         base.Start();
 
-        _faceSprite = _playableCardInfo.FaceSprite;
-        _backSprite = _playableCardInfo.BackSprite;
-
-        _currentSuit = _playableCardInfo.CurrentSuit;
-        _cost = _playableCardInfo.Cost;
-        _type = _playableCardInfo.Type;
-
-        GetComponentInChildren<SpriteRenderer>().sprite = _faceSprite;
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _itemSway = GetComponentInChildren<ItemSway>();
     }
 
@@ -58,7 +45,7 @@ public class PlayableCard : Card
             return;
 
         _previousHolder = _currentHolder;
-        
+
         _currentHolder = holder;
         SetHolder(_currentHolder);
     }
@@ -70,12 +57,19 @@ public class PlayableCard : Card
             return;
 
         _currentHolder = _previousHolder;
-
     }
 
     public void SetInfo(PlayableCardObject cardInfo)
     {
         _playableCardInfo = cardInfo;
+
+        _faceSprite = _playableCardInfo.FaceSprite;
+        _backSprite = _playableCardInfo.BackSprite;
+
+        _currentSuit = _playableCardInfo.CurrentSuit;
+        _cost = _playableCardInfo.Cost;
+        _type = _playableCardInfo.Type;
+        _spriteRenderer.sprite = _faceSprite;
     }
 
     public override void Release()

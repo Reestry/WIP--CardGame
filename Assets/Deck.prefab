@@ -282,6 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6874038120554882027}
+  - component: {fileID: 3420598823608191367}
   m_Layer: 0
   m_Name: Deck
   m_TagString: Untagged
@@ -306,6 +307,18 @@ Transform:
   - {fileID: 812368536630387968}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3420598823608191367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024826019171925929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6277b64f6ce425842aee4b0192736d66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeckController
 --- !u!1 &4489362789105327734
 GameObject:
   m_ObjectHideFlags: 0

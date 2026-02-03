@@ -14,7 +14,7 @@ public class ItemSway : MonoBehaviour
             Time.deltaTime * _swaySmooth);
     }
 
-    public void Sway(Vector2 angle)
+    public void Sway(Vector2 angle)  
     {
         angle *= _swaymult;
         var rotationx = Quaternion.AngleAxis(-angle.x, Vector3.up);
@@ -26,5 +26,10 @@ public class ItemSway : MonoBehaviour
     public void ResetSway()
     {
         _targetRotation = new Quaternion(0, 0, 0, 0);
+    }
+
+    private void CardFlipAnimation()
+    {
+        
     }
 }
