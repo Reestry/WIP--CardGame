@@ -6,15 +6,15 @@ using Random = UnityEngine.Random;
 
 public class PlayableCard : Card
 {
-    [SerializeField] private PlayableCardObject _playableCardInfo;
+    protected PlayableCardObject _playableCardInfo;
 
     private CardHolderController _currentHolder;
 
-    private Sprite _faceSprite;
-    private Sprite _backSprite;
-    private SuitObject _currentSuit;
-    private int _cost;
-    private CardType _type;
+    protected Sprite _faceSprite;
+    protected Sprite _backSprite;
+    protected SuitObject _currentSuit;
+    protected int _cost;
+    protected CardType _type;
 
     public void SetHolder(CardHolderController holder)
     {
@@ -30,15 +30,13 @@ public class PlayableCard : Card
 
     private void OnEnable()
     {
-        base.Start();
-
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _itemSway = GetComponentInChildren<ItemSway>();
     }
 
     private CardHolderController _previousHolder;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         var holder = other.GetComponent<CardHolderController>();
         if (holder == null)
@@ -47,7 +45,6 @@ public class PlayableCard : Card
         _previousHolder = _currentHolder;
 
         _currentHolder = holder;
-        SetHolder(_currentHolder);
     }
 
     private void OnTriggerExit2D(Collider2D other)

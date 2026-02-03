@@ -6,7 +6,7 @@ using UnityEngine;
 public class CardHolderController : MonoBehaviour
 {
     [SerializeField] private float _indentation;
-
+    [SerializeField] private int _maxCards;
     [SerializeField] private Transform _handHolder;
     [SerializeField] private Transform _center;
     private List<PlayableCard> _hand = new();
@@ -19,8 +19,6 @@ public class CardHolderController : MonoBehaviour
 
         SortItems();
     }
-
-    [SerializeField] private int _maxCards;
 
     public void SortItems()
     {
