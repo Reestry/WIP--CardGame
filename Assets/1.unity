@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 1102386800}
   - component: {fileID: 1102386799}
   m_Layer: 7
-  m_Name: Text (TMP) (1)
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1436,7 +1436,7 @@ GameObject:
   - component: {fileID: 1481769055}
   - component: {fileID: 1481769054}
   m_Layer: 7
-  m_Name: Text (TMP)
+  m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1877,6 +1877,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d540737fcc1d38f408a9ad29b0385e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _card:
+  - {fileID: 11400000, guid: 740f26a3ef4fb514d93589d28e9cd6c8, type: 2}
+  - {fileID: 11400000, guid: 91fc6c764da2e9f4b8f083552c578768, type: 2}
+  - {fileID: 11400000, guid: ac8d64127e7a8e548befbda1f78ab5a9, type: 2}
+  - {fileID: 11400000, guid: b60ca6b40dd0de94b917e2efb24171db, type: 2}
+  - {fileID: 11400000, guid: 3f372a411b3c3ce4cb9243956080157c, type: 2}
+  - {fileID: 11400000, guid: e2109d277d956f34097b805aba42a17b, type: 2}
+  - {fileID: 11400000, guid: 5b194e42069d7ab42984c476e9bf89f0, type: 2}
+  - {fileID: 11400000, guid: 59e630acd9cfb334ba37b2290c484ea7, type: 2}
+  - {fileID: 11400000, guid: 7afebc6f6af4daa41b9a0bfd95d44289, type: 2}
+  - {fileID: 11400000, guid: 810d6ee15dee15f4295ba7222d79dbca, type: 2}
+  - {fileID: 11400000, guid: 1f3e60e10ed197d4c865b2964315fdd1, type: 2}
+  - {fileID: 11400000, guid: 069da746512d43e42aee468e0dd736b9, type: 2}
+  - {fileID: 11400000, guid: dd30916325113864c9828ac57d4ca316, type: 2}
+  - {fileID: 11400000, guid: f80e599d1acc3c0429f9a3a3dda2873e, type: 2}
+  - {fileID: 11400000, guid: 6f665a0f1d2bd88478aa4e15ebe78100, type: 2}
+  - {fileID: 11400000, guid: b8116fb0221c4084998019915ebd628b, type: 2}
+  - {fileID: 11400000, guid: 970db1900aae39642857371c96a2ecaf, type: 2}
+  - {fileID: 11400000, guid: 851d460453e4278478a0361f8abe676f, type: 2}
+  - {fileID: 11400000, guid: 8164468df12eae341b2105d9ef654488, type: 2}
+  - {fileID: 11400000, guid: 8446c5af896cd984d8909b85d4f50e53, type: 2}
+  - {fileID: 11400000, guid: b29e7ec2490bbd4489f0c712cf489bba, type: 2}
+  - {fileID: 11400000, guid: e79386bb369cca74ca0199450a3e7e29, type: 2}
+  - {fileID: 11400000, guid: c26406805533ff744874a274794961d7, type: 2}
+  - {fileID: 11400000, guid: e6ed3a226f440144d842a9676b631a14, type: 2}
+  _damageText: {fileID: 1102386799}
+  _healthText: {fileID: 1481769054}
+  _faceSprite: {fileID: 397346235}
 --- !u!1001 &5268104086152123767
 PrefabInstance:
   m_ObjectHideFlags: 0
