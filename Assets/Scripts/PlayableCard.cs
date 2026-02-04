@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class PlayableCard : Card
 {
@@ -13,9 +9,14 @@ public class PlayableCard : Card
     protected Sprite _faceSprite;
     protected Sprite _backSprite;
     protected SuitObject _currentSuit;
-    protected int _cost;
+    protected int _damage;
     protected CardType _type;
 
+
+    public int GetDamage()
+    {
+        return _damage;
+    }
     public void SetHolder(CardHolderController holder)
     {
         _currentHolder = holder;
@@ -64,7 +65,7 @@ public class PlayableCard : Card
         _backSprite = _playableCardInfo.BackSprite;
 
         _currentSuit = _playableCardInfo.CurrentSuit;
-        _cost = _playableCardInfo.Cost;
+        _damage = _playableCardInfo.Cost;
         _type = _playableCardInfo.Type;
         _spriteRenderer.sprite = _faceSprite;
     }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class EnemyController : PlayableCard
 {
@@ -29,10 +29,21 @@ public class EnemyController : PlayableCard
         _backSprite = _playableCardInfo.BackSprite;
 
         _currentSuit = _playableCardInfo.CurrentSuit;
-        _cost = _playableCardInfo.Cost;
-        _health = _cost * 2;
+        _damage = _playableCardInfo.Cost;
+        _health = _damage * 2;
 
+        UpdateText();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        _health -= damage;
+        UpdateText();
+    }
+
+    private void UpdateText()
+    {
         _healthText.text = _health.ToString();
-        _damageText.text = _cost.ToString();
+        _damageText.text = _damage.ToString();
     }
 }

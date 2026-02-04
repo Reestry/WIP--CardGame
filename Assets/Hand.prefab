@@ -24,12 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3050072111466102553}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26200002, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.06999999, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7504948429012577293}
+  m_Father: {fileID: 1978998270305688178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4359704458378891479
 GameObject:
@@ -59,7 +59,8 @@ Transform:
   m_LocalPosition: {x: -0.19200003, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5340018842280177827}
   m_Father: {fileID: 7504948429012577293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8231726195933675503
@@ -94,7 +95,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1978998270305688178}
-  - {fileID: 5340018842280177827}
   - {fileID: 8801998401030874426}
   - {fileID: 9012531429930432661}
   m_Father: {fileID: 0}
@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _indentation: 0.3
+  _maxCards: 0
   _handHolder: {fileID: 1978998270305688178}
   _center: {fileID: 5340018842280177827}
   _cardPrefab: {fileID: 1397701163961505995, guid: c284f18fe6b215447b933a5778925204, type: 3}

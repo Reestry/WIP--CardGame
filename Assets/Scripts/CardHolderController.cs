@@ -48,6 +48,11 @@ public class CardHolderController : MonoBehaviour
         SortItems();
     }
 
+    public List<PlayableCard> GetInfo()
+    {
+        return _hand;
+    }
+
     protected void ClearHand()
     {
         foreach (var card in _hand)
@@ -58,4 +63,8 @@ public class CardHolderController : MonoBehaviour
 
         _hand.Clear();
     }
+    
+    
+    
+    
 }
